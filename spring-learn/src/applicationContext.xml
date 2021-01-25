@@ -8,9 +8,17 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- Define your beans here -->
-    <bean id = "myCoach"
-        class="com.gurami.learnspring.TrackCoach">
+ 
+      <bean id="myFortune" 
+     class="com.gurami.learnspring.HappyFortuneService">
      </bean>
+     
+    <bean id ="myCoach"
+        class="com.gurami.learnspring.TrackCoach">
+        <constructor-arg ref="myFortune"/>
+     </bean>
+     
+      
      
      <bean id="myLoggerConfig" class="com.gurami.learnspring.MyLoggerConfig" init-method="initLogger">
     	<property name="rootLoggerLevel" value="FINE" />
