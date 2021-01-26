@@ -9,17 +9,20 @@
 
     <!-- Define your beans here -->
  
-      <bean id="myFortune" 
+      <bean id="myFortuneService" 
      class="com.gurami.learnspring.HappyFortuneService">
      </bean>
      
     <bean id ="myCoach"
         class="com.gurami.learnspring.TrackCoach">
-        <constructor-arg ref="myFortune"/>
+        <constructor-arg ref="myFortuneService"/>
      </bean>
      
+      <bean id="myCricketCoach" class="com.gurami.learnspring.CricketCoach">
+      <!-- set upp setter injection --> 
+      <property name="fortuneService" ref="myFortuneService"/>
+      </bean>
       
-     
      <bean id="myLoggerConfig" class="com.gurami.learnspring.MyLoggerConfig" init-method="initLogger">
     	<property name="rootLoggerLevel" value="FINE" />
     	<property name="printedLoggerLevel" value="FINE"/>
