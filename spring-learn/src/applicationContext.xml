@@ -21,8 +21,13 @@
       <bean id="myCricketCoach" class="com.gurami.learnspring.CricketCoach">
       <!-- set upp setter injection --> 
       <property name="fortuneService" ref="myFortuneService"/>
+            <!-- inject literal values -->
+      <property name="emailAddress" value ="thebestcoachGurami"/>
+      <property name="team" value ="Gurami team"/>
       </bean>
       
+      
+   
      <bean id="myLoggerConfig" class="com.gurami.learnspring.MyLoggerConfig" init-method="initLogger">
     	<property name="rootLoggerLevel" value="FINE" />
     	<property name="printedLoggerLevel" value="FINE"/>
